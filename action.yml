@@ -1,5 +1,5 @@
 name: 'Validate YAML Schema'
-description: 'Greet someone and record the time'
+description: 'A Github action for checking if YAML files comply with specified schema.'
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
