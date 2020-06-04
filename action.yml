@@ -1,13 +1,14 @@
 name: 'Validate YAML Schema'
 description: 'A Github action for checking if YAML files comply with specified schema.'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  files-to-validate: 
+    description: 'List of files to validate along with corresponding schema'
     required: true
-    default: 'World'
+    default: []
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  errors: 
+    description: 'List of errors during validation'
+    default: []
 runs:
   using: 'node12'
   main: 'dist/index.js'
