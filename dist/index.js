@@ -11427,7 +11427,6 @@ const validateYamlFile = (filePath, schema) => {
 
 
 
-//COMMENT
 
 const validateYamlFilesInDirectory = ({path, schema}) =>{
 
@@ -11444,17 +11443,17 @@ const validateYamlFilesInDirectory = ({path, schema}) =>{
 }
 
 const main = () =>{
-  const filesToValidate = Object(core.getInput)('files-to-validate');
-  //TODO
-  //check if filesToValidate is and Array with correct structure
-
   try {
-    filesToValidate.map(validateYamlFilesInDirectory)
+    const filesToValidate = Object(core.getInput)('files-to-validate');
+    //TODO
+    //check if filesToValidate is and Array with correct structure
+    const filesList = JSON.parse(filesToValidate)
+
+    filesList.map(validateYamlFilesInDirectory)
   } 
   catch (error) {
     Object(core.setFailed)(error.message);
   }
-
 }
 
 

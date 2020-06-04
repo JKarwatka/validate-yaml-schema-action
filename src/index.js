@@ -4,7 +4,6 @@ import * as fs from 'fs'
 import { validateYamlFile } from './validateYamlFile'
 
 
-//COMMENT
 
 const validateYamlFilesInDirectory = ({path, schema}) =>{
 
@@ -21,17 +20,17 @@ const validateYamlFilesInDirectory = ({path, schema}) =>{
 }
 
 const main = () =>{
-  const filesToValidate = core.getInput('files-to-validate');
-  //TODO
-  //check if filesToValidate is and Array with correct structure
-
   try {
-    filesToValidate.map(validateYamlFilesInDirectory)
+    const filesToValidate = core.getInput('files-to-validate');
+    //TODO
+    //check if filesToValidate is and Array with correct structure
+    const filesList = JSON.parse(filesToValidate)
+
+    filesList.map(validateYamlFilesInDirectory)
   } 
   catch (error) {
     core.setFailed(error.message);
   }
-
 }
 
 
