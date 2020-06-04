@@ -4,7 +4,7 @@ import * as fs from 'fs'
 import { validateYamlFile } from './validateYamlFile'
 
 
-
+//COMMENT
 
 const validateYamlFilesInDirectory = ({path, schema}) =>{
 
