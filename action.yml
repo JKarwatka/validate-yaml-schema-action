@@ -1,4 +1,4 @@
-name: 'Hello World'
+name: 'Validate YAML Schema'
 description: 'Greet someone and record the time'
 inputs:
   who-to-greet:  # id of input
