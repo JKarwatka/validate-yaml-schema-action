@@ -22,10 +22,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-          
-      - name: Validate YAML Schema
-        uses: JKarwatka/validate-yaml-schema-action@master
-        with:
-          # List of files to validate along with corresponding schema
-          files-to-validate: '[{ "path": "test/testcase1/testcase1.yaml", "schema": "test/testcase1/testcase1.schema.yaml" }]'
+    - uses: actions/checkout@v2
+        
+    - name: Validate YAML Schema
+      uses: JKarwatka/validate-yaml-schema-action@master
+      with:
+        # List of files to validate along with corresponding schema
+        files-to-validate: '[{ "path": "test/testcase1/testcase1.yaml", "schema": "test/testcase1/testcase1.schema.yaml" }]'
