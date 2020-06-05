@@ -24,5 +24,8 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
         
-    - name: Echo the greeting's time
-      run: echo 'HELLO THERE'
+    - name: Validate YAML Schema
+      uses: JKarwatka/validate-yaml-schema-action@master
+      with:
+        # List of files to validate along with corresponding schema
+        files-to-validate: '[{ "path": "test/testcase1/testcase1.yaml", "schema": "test/testcase1/testcase1.schema.yaml" }]'
