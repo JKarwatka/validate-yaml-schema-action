@@ -400,16 +400,26 @@ module.exports = require("path");
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(470);
 /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_actions_core__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var main_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(750);
+/* harmony import */ var main_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(main_js__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
-_actions_core__WEBPACK_IMPORTED_MODULE_0__.debug('HELLO THERE')
+Object(main_js__WEBPACK_IMPORTED_MODULE_1__.main)()
 
 
 
 
 
 
+
+
+/***/ }),
+
+/***/ 750:
+/***/ (function(module) {
+
+module.exports = eval("require")("main.js");
 
 
 /***/ })

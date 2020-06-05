@@ -1,7 +1,7 @@
 import * as core from '@actions/core'
+import { main } from 'main.js'
 
-
-core.debug('HELLO THERE')
+main()
 
 
 
