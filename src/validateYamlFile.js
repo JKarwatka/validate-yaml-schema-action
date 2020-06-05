@@ -1,21 +1,22 @@
 import { loadYamlFile } from './loadYamlFile'
 import validateSchema from 'yaml-schema-validator'
+import * as core from '@actions/core'
 
 export const validateYamlFile = (filePath, schema) => {
-  console.log('______________________________________________________')
-  console.log('FILE: ' + filePath)
+  core.debug('______________________________________________________')
+  core.debug('FILE: ' + filePath)
   const file = loadYamlFile(filePath)
-  console.log('YAML FILE: ');
-  console.log(doc);
-  console.log('VALIDATING: ...')
+  core.debug('YAML FILE: ');
+  core.debug(doc);
+  core.debug('VALIDATING: ...')
 
   const errors = validateSchema(file, {
     schemaPath: schema,
   })
 
   if (errors.length > 0){
-    console.log('ERRORS: ')
-    errors.map(console.log)
+    core.debug('ERRORS: ')
+    errors.map(core.debug)
     //throw new Error('ERRORS IN YAML FILES!')
   }
 }

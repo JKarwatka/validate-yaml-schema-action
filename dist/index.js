@@ -11402,21 +11402,22 @@ var yaml_schema_validator_default = /*#__PURE__*/__webpack_require__.n(yaml_sche
 
 
 
+
 const validateYamlFile = (filePath, schema) => {
-  console.log('______________________________________________________')
-  console.log('FILE: ' + filePath)
+  Object(core.debug)('______________________________________________________')
+  Object(core.debug)('FILE: ' + filePath)
   const file = loadYamlFile(filePath)
-  console.log('YAML FILE: ');
-  console.log(doc);
-  console.log('VALIDATING: ...')
+  Object(core.debug)('YAML FILE: ');
+  Object(core.debug)(doc);
+  Object(core.debug)('VALIDATING: ...')
 
   const errors = yaml_schema_validator_default()(file, {
     schemaPath: schema,
   })
 
   if (errors.length > 0){
-    console.log('ERRORS: ')
-    errors.map(console.log)
+    Object(core.debug)('ERRORS: ')
+    errors.map(core.debug)
     //throw new Error('ERRORS IN YAML FILES!')
   }
 }
@@ -11444,7 +11445,7 @@ const validateYamlFilesInDirectory = ({path, schema}) =>{
 
 const main = () =>{
   try {
-    console.log(process.env.GITHUB_WORKSPACE)
+    Object(core.debug)('GITHUB_WORKSPACE: ' + process.env.GITHUB_WORKSPACE)
     const filesToValidate = Object(core.getInput)('files-to-validate');
     //TODO
     //check if filesToValidate is and Array with correct structure

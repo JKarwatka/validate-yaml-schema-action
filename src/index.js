@@ -21,7 +21,7 @@ const validateYamlFilesInDirectory = ({path, schema}) =>{
 
 const main = () =>{
   try {
-    console.log(process.env.GITHUB_WORKSPACE)
+    core.debug('GITHUB_WORKSPACE: ' + process.env.GITHUB_WORKSPACE)
     const filesToValidate = core.getInput('files-to-validate');
     //TODO
     //check if filesToValidate is and Array with correct structure
