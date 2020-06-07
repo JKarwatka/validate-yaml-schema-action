@@ -28,4 +28,4 @@ jobs:
       uses: JKarwatka/validate-yaml-schema-action@master
       with:
         # List of files to validate along with corresponding schema
-        files-to-validate: '[{ "path": "test/testcase1/testcase1.yaml", "schema": "test/testcase1/testcase1.schema.yaml" }]'
+        files-to-validate: '[{ "path": "tests/testCase1/testcase1.yaml", "schema": "tests/testCase1/testcase1.schema.yaml" }]'
