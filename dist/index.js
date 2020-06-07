@@ -9221,7 +9221,7 @@ const processInputEntry = ({path, schema}) =>{
 
   }
   if(pathStats.isFile()){
-    validateFile(fullPath,schema)
+    validateYamlFile(fullPath,fullSchema)
   }
 }
 
