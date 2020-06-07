@@ -30,12 +30,12 @@ jobs:
         # List of files to validate along with corresponding schema
         files-to-validate: |
         [
-          { 
-            "path": "tests/testSingleFile/file.yaml", 
-            "schema": "tests/testSingleFile/schema.yaml"
-          }, 
-          { 
-            "path": "tests/testDirectory/directoryWithYamlFiles", 
-            "schema": "tests/testDirectory/schema.yaml"
-          }
+        { 
+        "path": "tests/testSingleFile/file.yaml", 
+        "schema": "tests/testSingleFile/schema.yaml"
+        }, 
+        { 
+        "path": "tests/testDirectory/directoryWithYamlFiles", 
+        "schema": "tests/testDirectory/schema.yaml"
+        }
         ]
