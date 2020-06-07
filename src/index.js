@@ -11,7 +11,7 @@ const validateYamlFile = (filePath, schema) => {
   core.debug('FILE: ' + filePath)
   const file = loadYamlFile(filePath)
   core.debug('YAML FILE: ');
-  core.debug(doc);
+  core.debug(file);
   core.debug('VALIDATING: ...')
 
   const errors = validateSchema(file, {

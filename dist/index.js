@@ -9191,7 +9191,7 @@ const validateYamlFile = (filePath, schema) => {
   core.debug('FILE: ' + filePath)
   const file = loadYamlFile(filePath)
   core.debug('YAML FILE: ');
-  core.debug(doc);
+  core.debug(file);
   core.debug('VALIDATING: ...')
 
   const errors = yaml_schema_validator__WEBPACK_IMPORTED_MODULE_0___default()(file, {
