@@ -58,3 +58,5 @@ const main = () =>{
     core.setFailed(error.message);
   }
 }
+
+main()
