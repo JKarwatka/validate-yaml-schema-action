@@ -28,18 +28,20 @@ const validateYamlFile = (filePath, schema) => {
 
 const loadYamlFile = filePath => jsyaml.safeLoad(fs.readFileSync(filePath, 'utf8'));
 
+const withGithubWorkspacePath = path => `${process.env.GITHUB_WORKSPACE}/${path}`
 
 const processInputEntry = ({path, schema}) =>{
-
-  const pathStats = fs.lstatSync(path)
+  const fullPath = withGithubWorkspacePath(path)
+  const fullSchema = withGithubWorkspacePath(schema)
+  const pathStats = fs.lstatSync(fullPath)
   if(pathStats.isDirectory()){
-    glob(`${process.env.GITHUB_WORKSPACE}/${path}/**/*.yaml`, {}, (err, files) => {
-      files.map(validateYamlFile)
+    glob(`${fullPath}/**/*.yaml`, {}, (err, files) => {
+      files.map(filePath => validateYamlFile(filePath,fullSchema))
     })
 
   }
   if(pathStats.isFile()){
-    validateFile({path,schema})
+    validateFile(fullPath,schema)
   }
 }
 
