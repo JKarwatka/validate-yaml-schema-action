@@ -8,7 +8,30 @@ To use the action simply create an `.yml` file in the `.github/workflows/` direc
 
 For example:
 
-```TBD```
+```
+name: Validate YAML Schema
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # Important: This sets up your GITHUB_WORKSPACE environment variable
+    - uses: actions/checkout@v2
+
+    - name: Validate YAML Schema
+      uses: ansible/ansible-lint-action@master
+      with:
+        files-to-validate: [
+          {
+            path: path/to/yaml/file/or/directory
+            schema: path/to/yaml/schema
+          }
+        ]
+```
 
 ## Contributing
 

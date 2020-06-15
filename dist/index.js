@@ -9188,12 +9188,16 @@ const core = __webpack_require__(470)
 
 const validateYamlFile = (filePath, schema) => {
   core.debug('______________________________________________________')
+  console.log('______________________________________________________')
   core.debug('FILE: ' + filePath)
+  console.log('FILE: ' + filePath)
   const file = loadYamlFile(filePath)
   core.debug('YAML FILE: ');
+  console.log('YAML FILE: ');
   core.debug(file);
+  console.log(file);
   core.debug('VALIDATING: ...')
-
+  console.log('VALIDATING: ...')
   const errors = yaml_schema_validator__WEBPACK_IMPORTED_MODULE_0___default()(file, {
     schemaPath: schema,
   })
@@ -9201,7 +9205,8 @@ const validateYamlFile = (filePath, schema) => {
   if (errors.length > 0){
     core.debug('ERRORS: ')
     errors.map(core.debug)
-    //throw new Error('ERRORS IN YAML FILES!')
+    errors.map(console.log)
+    throw new Error('ERRORS IN YAML FILES!')
   }
 }
 
