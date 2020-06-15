@@ -7,24 +7,18 @@ const core = require('@actions/core')
 
 
 const validateYamlFile = (filePath, schema) => {
-  core.debug('______________________________________________________')
   console.log('______________________________________________________')
-  core.debug('FILE: ' + filePath)
   console.log('FILE: ' + filePath)
   const file = loadYamlFile(filePath)
-  core.debug('YAML FILE: ');
   console.log('YAML FILE: ');
-  core.debug(file);
   console.log(file);
-  core.debug('VALIDATING: ...')
   console.log('VALIDATING: ...')
   const errors = validateSchema(file, {
     schemaPath: schema,
   })
 
   if (errors.length > 0){
-    core.debug('ERRORS: ')
-    errors.map(core.debug)
+    console.log('ERRORS: ')
     errors.map(console.log)
     throw new Error('ERRORS IN YAML FILES!')
   }
@@ -53,7 +47,7 @@ const processInputEntry = ({path, schema}) =>{
 
 const main = () =>{
   try {
-    core.debug('GITHUB_WORKSPACE: ' + process.env.GITHUB_WORKSPACE)
+    console.log('GITHUB_WORKSPACE: ' + process.env.GITHUB_WORKSPACE)
     const filesToValidate = core.getInput('files-to-validate');
     //TODO
     //check if filesToValidate is and Array with correct structure
