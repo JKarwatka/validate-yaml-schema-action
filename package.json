@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/JKarwatka/validate-yaml-schema#readme",
   "dependencies": {
-    "@actions/core": "^1.2.4",
+    "@actions/core": "^1.2.6",
     "@actions/github": "^2.2.0",
     "glob": "^7.1.6",
     "husky": "^4.2.5",
